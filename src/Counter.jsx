@@ -1,17 +1,26 @@
 import React, { useRef, useState } from 'react'
+import './Counter.css'
 
 const Counter = () => {
 
     const [userInput, setUserInput] = useState('')
     const [charCount, setCharCount] = useState(0)
+    const [excludeSpaces, setExcludeSpaces] = useState(false)
     const [wordCount, setWordCount] = useState(0)
     const [sentenceCount, setSentenceCount] = useState(0)
+    const [averageWord, setAverageWord] = useState(0)
     const [letterFreq, setLetterFreq] = useState({})
 
     function handleInputChange(event) {
         const newValue = event.target.value;
         setUserInput(newValue);
-        setCharCount(newValue.length);
+
+        const charCountValue = excludeSpaces
+            ? newValue.replace(/\s/g, '').length  // removes all whitespace
+            : newValue.length;
+
+        setCharCount(charCountValue);
+
         const words = newValue.match(/\b\w+\b/g) || [];
         setWordCount(words.length);
 
@@ -48,10 +57,22 @@ const Counter = () => {
         });
     };
 
+    const excludeFunc = () => {
+        const newExcludeSpaces = !excludeSpaces;
+        setExcludeSpaces(newExcludeSpaces);
+
+        const charCountValue = newExcludeSpaces
+            ? userInput.replace(/\s/g, '').length
+            : userInput.length;
+
+        setCharCount(charCountValue);
+    };
+
+
     return (
         <>
-            <div className="container rounded-2xl">
-                <h1>Analyze your text in real-time.</h1>
+            <div className="container">
+                <h1 className='container-heading'>Analyze your text in real-time.</h1>
                 <textarea
                     id="textInput"
                     placeholder="Start typing here... (or paste your text)"
@@ -62,33 +83,40 @@ const Counter = () => {
                 </textarea>
 
 
-                <div className="options">
-                    <label>
-                        <input type="checkbox" /> Exclude Spaces</label>
-                    <label>
-                        <input type="checkbox" /> Set Character Limit</label>
-                    <span>Approx. reading time: <span id="readingTime">0</span> minute</span>
-                </div>
-
-                <div className="stats-container">
-                    <div className="stat-box purple">
-                        <p className="stat-number">{charCount}</p>
-                        <p className="stat-title">Total Characters</p>
+                <div className='options-container'>
+                    <div className="options-left">
+                        <label>
+                            <input type="checkbox" checked={excludeSpaces} onChange={excludeFunc} /> Exclude Spaces
+                        </label>
+                        <label>
+                            <input type="checkbox" /> Set Character Limit
+                        </label>
                     </div>
-                    <div className="stat-box orange">
-                        <p className="stat-number">{wordCount}</p>
-                        <p className="stat-title">Word Count</p>
-                    </div>
-                    <div className="stat-box red">
-                        <p className="stat-number">{sentenceCount}</p>
-                        <p className="stat-title">Sentence Count</p>
+                    <div className='options-right'>
+                        <span>Approx. reading time: <span id="readingTime">0</span> minute</span>
                     </div>
                 </div>
 
-                <div className="letter-density">
+                <div className='stats-container-holder'>
+                    <div className="stats-container">
+                        <div className="stat-box purple">
+                            <p className="stat-number">{charCount}</p>
+                            <p className="stat-title">Total Characters</p>
+                        </div>
+                        <div className="stat-box orange">
+                            <p className="stat-number">{wordCount}</p>
+                            <p className="stat-title">Word Count</p>
+                        </div>
+                        <div className="stat-box red">
+                            <p className="stat-number">{sentenceCount}</p>
+                            <p className="stat-title">Sentence Count</p>
+                        </div>
+                    </div>
+                </div>
+                {/* <div className="letter-density">
                     <h2>Letter Density</h2>
                     {renderLetterDensity()}
-                </div>
+                </div> */}
             </div>
         </>
     )

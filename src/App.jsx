@@ -6,9 +6,11 @@ import Counter from './Counter'
 function App() {
     return (
         <>
-            {/* <Navbar /> */}
-            <Counter />
-            {/* <Footer /> */}
+            <div className="content-wrap">
+                <Navbar />
+                <Counter />
+                <Footer />
+            </div>
         </>
     )
 }

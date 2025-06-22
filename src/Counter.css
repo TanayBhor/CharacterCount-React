@@ -1,0 +1,89 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    /* margin: 40px auto; */
+    /* padding: 20px; */
+    text-align: center;
+    /* background-color: rgba(255, 255, 255, 0.234); */
+    /* backdrop-filter: blur(1px) */
+}
+
+.container-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 2rem 17rem;
+    color: var(--text-color);
+}
+
+textarea {
+    width: 90%;
+    height: 15rem;
+    padding: 15px;
+    background-color: var(--bg-color2);
+    border: none;
+    color: var(--text-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    resize: none;
+    outline: none;
+    transition: background-color 0.5s ease;
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 55px;
+    color: var(--text-color);
+}
+
+.options-left{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.stats-container-holder{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* background-color: red; */
+}
+
+.stats-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: aqua; */
+    /* gap: 5.7rem; */
+    gap: 4rem;
+}
+
+.stat-box {
+    flex: 1;
+    /* width: 14rem; */
+    padding: 20px 15px;
+    border-radius: 1rem;
+}
+
+.purple {
+    background: #c084fc;
+}
+
+.orange {
+    background: #fbbf24;
+}
+
+.red {
+    background: #fb7185;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.stat-title {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}

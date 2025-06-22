@@ -1,77 +1,59 @@
-.container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    text-align: center;
-    /* border-radius: 1rem; */
-    background-color: rgba(255, 255, 255, 0.234);
-    backdrop-filter: blur(1px)
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter;
 }
 
-h1 {
-    font-size: 3rem;
+:root {
+    --bg-color: rgb(255, 255, 255);
+    --bg-color2: #F2F2F7;
+    --text-color: black;
 }
 
-textarea {
-    width: 100%;
-    height: 15rem;
-    padding: 15px;
-    background: #333;
-    border: none;
-    color: white;
-    border-radius: 12px;
-    font-size: 1rem;
-    margin: 1.5rem 0;
-    resize: none;
-    outline: none;
+.dark {
+    --bg-color: rgb(17, 17, 25);
+    --bg-color2: #2A2B37;
+    --text-color: white;
 }
 
-.options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
+html,
+body,
+#root {
+    min-height: 100vh;
+    width: 100vw;
 }
 
-.stats-container {
-    display: flex;
-    justify-content: space-between;
+body {
+    /* padding: 0 18rem; */
+    background-color: var(--bg-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.stat-box {
-    /* flex: 1; */
-    /* margin: 0 10px; */
-    width: 13rem;
-    padding: 20px 15px;
-    border-radius: 12px;
+.content-wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-.purple {
-    background: #c084fc;
-}
-
-.orange {
-    background: #fbbf24;
-}
-
-.red {
-    background: #fb7185;
-}
-
-.stat-number {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.stat-title {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-}
-
+/*
 .letter-density {
     text-align: left;
     margin-top: 30px;
 }
+
+.letter-bar {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+    gap: 10px;
+}
+.bar {
+    height: 8px;
+    background-color: teal;
+    border-radius: 4px;
+    flex-grow: 1;
+} */
 
 /* .letter-bar {
     display: flex;
@@ -89,16 +71,3 @@ textarea {
     border-radius: 5px;
     margin-left: 10px;
 } */
-
-.letter-bar {
-    display: flex;
-    align-items: center;
-    margin: 4px 0;
-    gap: 10px;
-}
-.bar {
-    height: 8px;
-    background-color: teal;
-    border-radius: 4px;
-    flex-grow: 1;
-}

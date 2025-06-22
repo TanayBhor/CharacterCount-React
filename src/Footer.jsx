@@ -3,8 +3,11 @@ const Footer = () => {
         <footer style={{
             display:"flex",
             justifyContent:'center',
+
         }}>
-            <p>Created by @TanayBhor</p>
+            <p style={{
+                color: 'var(--text-color)'
+            }}>Created by @TanayBhor</p>
         </footer>
     )
 }
