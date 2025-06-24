@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import './Counter.css'
+import Footer from './Footer'
 
 const Counter = () => {
 
@@ -72,7 +73,9 @@ const Counter = () => {
     return (
         <>
             <div className="container">
-                <h1 className='container-heading'>Analyze your text in real-time.</h1>
+                <header className='container-heading'>
+                    <h1>Analyze your text <br /> in real-time.</h1>
+                </header>
                 <textarea
                     id="textInput"
                     placeholder="Start typing here... (or paste your text)"
@@ -117,6 +120,7 @@ const Counter = () => {
                     <h2>Letter Density</h2>
                     {renderLetterDensity()}
                 </div> */}
+                <Footer />
             </div>
         </>
     )

@@ -5,26 +5,28 @@ import { useTheme } from './ThemeContext'
 
 const Navbar = () => {
 
-    const {darkMode, toggleTheme} = useTheme()
+    const { darkMode, toggleTheme } = useTheme()
 
     return (
         <>
-            <nav className='navbar-container'>
-                <h1 className='navbar-heading'>Character Counter</h1>
-                <label className="switch">
+            <nav style={{display:'flex', justifyContent:'center'}}>
+                <div className='navbar-container'>
+                    <h1 className='navbar-heading'>Character Counter</h1>
+                    <label className="switch">
 
-                    <input
-                        type="checkbox"
-                        checked={darkMode}
-                        onChange={toggleTheme}
-                    />
+                        <input
+                            type="checkbox"
+                            checked={darkMode}
+                            onChange={toggleTheme}
+                        />
 
-                    <span className="dark-mode-button">
+                        <span className="dark-mode-button">
 
-                        {darkMode ? (<IoMoonOutline className='icon icon-moon' />) : (<IoSunnyOutline className='icon icon-sun' />)}
-                    </span>
+                            {darkMode ? (<IoMoonOutline className='icon icon-moon' />) : (<IoSunnyOutline className='icon icon-sun' />)}
+                        </span>
 
-                </label>
+                    </label>
+                </div>
             </nav>
         </>
     )

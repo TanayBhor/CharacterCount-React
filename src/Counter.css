@@ -9,9 +9,15 @@
 }
 
 .container-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-heading h1 {
     font-size: 3rem;
     font-weight: 700;
-    margin: 2rem 17rem;
+    margin: 2rem auto;
     color: var(--text-color);
 }
 
@@ -38,12 +44,12 @@ textarea {
     color: var(--text-color);
 }
 
-.options-left{
+.options-left {
     display: flex;
     gap: 1.5rem;
 }
 
-.stats-container-holder{
+.stats-container-holder {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -86,4 +92,43 @@ textarea {
 .stat-title {
     margin-top: 0.5rem;
     font-size: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+    .container-heading h1 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .options-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin: 20px 40px;
+        color: var(--text-color);
+        gap: 1rem;
+    }
+
+    .options-left {
+        display: contents;
+        /* flex-direction: column; */
+        gap: 1.5rem;
+    }
+
+    .stats-container {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .stats-container {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+    }
 }

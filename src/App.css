@@ -36,6 +36,13 @@ body {
     padding: 0 2rem;
 }
 
+@media screen and (max-width: 1120px){
+    .content-wrap {
+    margin: 0 0;
+    padding: 0 ;
+}
+}
+
 /*
 .letter-density {
     text-align: left;
